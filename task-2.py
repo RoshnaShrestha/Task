@@ -74,3 +74,21 @@ A = np.array([[1, 2], [5, 6]])
 B = np.array([[9, 3], [2, 5]])
 C = np.dot(A, B)
 print(C)
+
+
+"""
+Working with CSV/Excel
+Assignments
+Read and Process CSV: Read a CSV file containing employee details (name, age, department) and print the names of employees older than 30.
+
+"""
+import csv
+data_path = "employees.csv"
+
+import csv
+with open('employees.csv', mode='r') as file:
+    csv_reader = csv.DictReader(file)
+    print("Employees older than 30:")
+    for row in csv_reader:
+        if int(row['age']) > 30:
+            print(row['name'])
